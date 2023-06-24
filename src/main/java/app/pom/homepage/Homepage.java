@@ -42,6 +42,4 @@ public class Homepage extends BasePage {
 
     @FindBy (xpath ="//input[@name=\"email\"]")
     public WebElement emailToSubscribe;
-
-
 }
