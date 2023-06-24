@@ -6,9 +6,7 @@ import app.pom.testlogin_page.LoginWithInvalidCredentials;
 import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 public class TestApp extends BasePage {
-
     @Test(priority = 1, groups = {"BAT"})
     public void testNavigationToApplication() {
         Homepage homepage = new Homepage();
@@ -31,16 +29,11 @@ public class TestApp extends BasePage {
         Homepage homepage = new Homepage();
         sendKeysToElement(homepage.searchBar, "Dash Digital Watch");
         clickOnElement(homepage.searchBtn);
-        Thread.sleep(3000);
         clickOnElement(homepage.itemIcon);
-        Thread.sleep(2000);
         clickOnElement(homepage.addToCartBtn);
-        Thread.sleep(3000);
         clickOnElement(homepage.addToCartIcon);
-        Thread.sleep(2000);
         Assert.assertTrue(true, "Item Added Successfully");
     }
-
 
     @Test(priority = 4, groups = {"BAT"})
     public void testLoginWithInvalidCredentials() {
@@ -56,11 +49,9 @@ public class TestApp extends BasePage {
     public void userIsAbleToSubscribe() throws InterruptedException {
         {
             Homepage homepage = new Homepage();
-            Thread.sleep(2000);
             sendKeysToElement(homepage.emailToSubscribe, "test2@gmail.com");
             clickOnElement(homepage.subscriptionBtn);
             System.out.println("clicked on subscribe button");
-            Thread.sleep(2000);
             Assert.assertTrue(isElementVisible(homepage.errorMessage));
         }
     }
@@ -81,7 +72,7 @@ public class TestApp extends BasePage {
    /* @Test(priority = 8, groups = {"BAT"}, enabled = false)
     public void CheckoutProcess() {
         CheckoutProcess checkoutProcess = new CheckoutProcess();
-        checkoutProcess.clickViewChekoutBtn();
+        checkoutProcess.clickViewCheckoutBtn();
         cartPage.clickProceedToCheckoutButton();
       Assert.assertTrue(checkoutProcess.isCheckoutPageDisplayed);
         Assert.assertTrue(checkoutPageTitle.isDisplayed(), "Checkout process not initiated successfully");
